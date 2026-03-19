@@ -49,4 +49,16 @@ This project was base of the German Credit Dataset with Credit Risk from Kaggle.
 5. Which borrower segments may warrant closer underwriting reviews?
 
 ## 7. SQL Analysis Process
+The analysis began with intial data validation and exploration, including record preview and row count confirmation. I then used grouped aggregrations to compare borrower segments by the credit risk category. After identifying that higher-risl group had larger loan amounts and longer loan repayment durations, I extended my analysis to evaluate high-risk concetrations grouped by loan purpose and housing type. 
+
+Core SQL techniques used: 
+- SELECT
+- COUNT
+- AVG
+- ROUND
+- GROUP BY
+- ORDER BY
+- CASE WHEN
+- Conditional aggregation for high-risk rate calculations
+
 
