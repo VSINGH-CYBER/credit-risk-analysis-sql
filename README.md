@@ -1,4 +1,5 @@
-# Credit-Risk-Analysis-SQL
+# Credit Risk Analysis with SQL
+
 
 ## 1. Project Overview
 **This project analyzes customer credit data to identify patterns associated with higher credit risk.** Using SQL in MySQL Workbench, I explored how borrower characteristics such as loan amount, loan duration, loan purpose, and housing status relate to risk outcomes. The goal here was to generate business level insights that could help form stronger underwriting review and risk monitoring decisions.
@@ -45,7 +46,7 @@ This project was base of the German Credit Dataset with Credit Risk from Kaggle.
 1. Do higher-risk borrowers seem to have larger loan amounts?
 2. Do higher-risk borrowers seem to have longer loan repayment durations?
 3. Which loan purposes seem to have the larger concentrations high-risk borrowers?
-4. Does housing status seem to be correlated with credit risk?
+4. Does housing status seem to be associated with credit risk?
 5. Which borrower segments may warrant closer underwriting reviews?
 
 ## 7. SQL Analysis Process
@@ -64,21 +65,28 @@ Core SQL techniques used:
 ## 8. Sample Queries
 
 ### Query 1: Count customers by credit risk
+```sql
 SELECT `Credit Risk`, COUNT(*) AS customer_count
 FROM credit_data
 GROUP BY `Credit Risk`;
+```
 
 ### Query 2: Average credit amount by risk
+```sql
 SELECT `Credit Risk`, ROUND(AVG(`Credit amount`), 2) AS avg_credit_amount
 FROM credit_data
 GROUP BY `Credit Risk`;
+```
 
 ### Query 3: Average duration by risk
+```sql
 SELECT `Credit Risk`, ROUND(AVG(Duration), 2) AS avg_duration
 FROM credit_data
 GROUP BY `Credit Risk`;
+```
 
 ### Query 4: High-risk rate by purpose
+```sql
 SELECT
      Purpose,
      COUNT(*) AS total_customers,
@@ -87,8 +95,10 @@ SELECT
 FROM credit_data
 GROUP BY Purpose
 ORDER BY high_risk_rate_pct DESC;
+```
 
 ### Query 5: High-risk rate by housing
+```sql
 SELECT
      Housing,
      COUNT(*) AS total_customers,
@@ -97,6 +107,7 @@ SELECT
 FROM credit_data
 GROUP BY Housing
 ORDER BY high_risk_rate_pct DESC;
+```
 
 ## 9. Findings
 
